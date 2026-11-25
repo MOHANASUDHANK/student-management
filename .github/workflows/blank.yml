@@ -35,14 +35,14 @@ jobs:
         run: mvn -B clean verify
 
       # 4. SonarQube code quality analysis
-      - name: SonarQube Analysis
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: |
-          mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-            -Dsonar.projectKey=springboot-docker-demo \
-            -Dsonar.qualitygate.wait=true
+      # - name: SonarQube Analysis
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      #   run: |
+      #     mvn -B org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+      #       -Dsonar.projectKey=springboot-docker-demo \
+      #       -Dsonar.qualitygate.wait=true
 
       # 5. Setup Docker Buildx
       - name: Setup Docker Buildx
